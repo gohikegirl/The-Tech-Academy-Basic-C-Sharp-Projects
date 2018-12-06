@@ -33,6 +33,7 @@ namespace MathOpsProject
             bool valueCheck = userInput4 > 50;
             Console.WriteLine("Is this number greater than 50?" + valueCheck + ". Hit any key to proceed.");
             Console.ReadLine();
+
             //5.Takes an input from the user, divides it by 7, and prints the remainder to the console(tip: think % operator)
             Console.WriteLine("Enter an integer: ");
             int userInput5 = Convert.ToInt32(Console.ReadLine());
