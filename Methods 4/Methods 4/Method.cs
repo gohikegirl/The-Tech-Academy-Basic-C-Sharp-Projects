@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace Methods_4
 {
     class Method
-    {   
+    {
+        public Michelle();
+
         public static int mMichelle(int a, int b = 1)
         {
             return a + b;

@@ -33,7 +33,7 @@ namespace TwentyOne
 
             Deck deck = new Deck();
             int timesShuffled = 0; //creates variable that is the receiver of the "out" from the method below
-            deck = Shuffle(deck: deck, out timesShuffled, times:3); //calls the method below that randomizes the order of the deck--can add a ",x" that changes the default parameter
+            deck = Shuffle(deck: deck, timesShuffled: out timesShuffled, times:3); //calls the method below that randomizes the order of the deck--can add a ",x" that changes the default parameter
             //deck = Shuffle(deck, 3); //calls the method that allows randomization of the deck multiple times
             foreach (Card card in deck.Cards)
              {
@@ -51,6 +51,7 @@ namespace TwentyOne
             timesShuffled = 0; //sets the variable  that is an output of this method at a value of 0
             for (int i=0; i<times; i++)
             {
+                timesShuffled++;
                 List<Card> TempList = new List<Card>(); //create a new list that can be filled with cards
                 Random random = new Random(); //calls a randomizing method
                 while (deck.Cards.Count > 0) //creates loop, removing cards from one list into another in until there are no more to move
