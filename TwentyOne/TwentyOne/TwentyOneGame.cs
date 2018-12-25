@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TwentyOne
 {
-    class TwentyOneGame : Game //set up so that now the TwentyOneGame class inherits the properties and methods from Game
+    class TwentyOneGame : Game, IWalkAway //set up so that now the TwentyOneGame class inherits the properties and methods from Game and the interface
+        //IWalkAway
     {
         public override void Play()
         {
@@ -18,6 +19,11 @@ namespace TwentyOne
         {
             Console.WriteLine("Welcome to Twenty One!");
             base.ListPlayers();
+        }
+
+        public void WalkAway(Player player)
+        {
+            throw new NotImplementedException();
         }
     }
 }

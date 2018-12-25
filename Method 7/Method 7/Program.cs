@@ -10,11 +10,18 @@ namespace Method_7
     {
         static void Main(string[] args)
         {
+            //code for Method 7 (polymorphism)
             Person person = new Employee();
             person.firstName = "Sample";
             person.lastName = "Student";
             person.sayName();
             Console.ReadLine();
+
+            //code for Method 7b (interfaces)
+            IQuittable person2 = new Employee();
+            person2.Quit();
+            Console.ReadLine();
+
         }
     }
 }
