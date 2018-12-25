@@ -31,17 +31,23 @@ namespace TwentyOne
 
             //uses constructor that creates the deck first
 
-            Deck deck = new Deck();
-            int timesShuffled = 0; //creates variable that is the receiver of the "out" from the method below
-            deck = Shuffle(deck: deck, timesShuffled: out timesShuffled, times:3); //calls the method below that randomizes the order of the deck--can add a ",x" that changes the default parameter
-            //deck = Shuffle(deck, 3); //calls the method that allows randomization of the deck multiple times
-            foreach (Card card in deck.Cards)
-             {
-                Console.WriteLine(card.Face + " of " + card.Suit);
-             }
-            Console.WriteLine(deck.Cards.Count);
-            Console.Write("Times shuffled {0}", timesShuffled); //brackets designate that we want to insert the value of the following variable
+            TwentyOneGame game = new TwentyOneGame();
+            game.Players = new List<string>() { "Jesse", "Bill", "Joe" };
+            game.ListPlayers();
+            game.Play(); //called from TwentyOneGame and only accessible from that class
             Console.ReadLine();
+
+            //Deck deck = new Deck();
+            //int timesShuffled = 0; //creates variable that is the receiver of the "out" from the method below
+            //deck = Shuffle(deck: deck, timesShuffled: out timesShuffled, times:3); //calls the method below that randomizes the order of the deck--can add a ",x" that changes the default parameter
+            ////deck = Shuffle(deck, 3); //calls the method that allows randomization of the deck multiple times
+            //foreach (Card card in deck.Cards)
+            // {
+            //    Console.WriteLine(card.Face + " of " + card.Suit);
+            // }
+            //Console.WriteLine(deck.Cards.Count);
+            //Console.Write("Times shuffled {0}", timesShuffled); //brackets designate that we want to insert the value of the following variable
+            //Console.ReadLine();
             
         }
 
