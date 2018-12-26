@@ -31,10 +31,14 @@ namespace TwentyOne
 
             //uses constructor that creates the deck first
 
-            TwentyOneGame game = new TwentyOneGame(); //can also start with Game game = new TwentyOneGame()--this is an example of polymorphism (can create a new object in an inherited class)
+            Game game = new TwentyOneGame(); //can also start with Game game = new TwentyOneGame()--this is an example of polymorphism (can create a new object in an inherited class)
+            game.Players = new List<Player>();
+            Player player = new Player();
+            player.Name = "Jesse";
+            game = game + player;//can replace with "game += player"
             //helpful for adding subclasses into a broader superclass
-            game.Players = new List<string>() { "Jesse", "Bill", "Joe" };
-            game.ListPlayers();
+           
+            //game.ListPlayers();
             //game.Play(); //called from TwentyOneGame and only accessible from that class
             Console.ReadLine();
 

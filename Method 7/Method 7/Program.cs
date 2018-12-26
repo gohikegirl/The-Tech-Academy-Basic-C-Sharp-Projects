@@ -22,6 +22,7 @@ namespace Method_7
             person2.Quit();
             Console.ReadLine();
 
+            
         }
     }
 }

@@ -12,5 +12,19 @@ namespace TwentyOne
         public int Balance { get; set; }
         public string Name { get; set; }
         public bool isActivelyPlaying { get; set; }
+
+        //creates a new overloaded operator (math operator) that does something to another class or object--in this case, adds or substracts a new player
+        //to the Game
+        public static Game operator+(Game game, Player player)
+        {
+            game.Players.Add(player);
+            return game;
+        }
+
+        public static Game operator-(Game game, Player player)
+        {
+            game.Players.Remove(player);
+            return game;
+        }
     }
 }
