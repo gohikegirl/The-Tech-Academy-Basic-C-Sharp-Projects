@@ -85,6 +85,12 @@ namespace LambdaExp_Project
             }
             Console.ReadLine();
 
+            List<Employee> EmpsGtr5 = Employees.Where(x => x.ID > 105).ToList();
+            foreach (Employee Emp in EmpsGtr5)
+            {
+                Console.WriteLine(Emp.fName + " " + Emp.lName);
+            }
+            Console.ReadLine();
 
         }
     }
