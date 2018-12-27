@@ -11,7 +11,7 @@ namespace TwentyOne
         static void Main(string[] args)
         {
 
-            //creation of new deck of cards
+            //METHOD ONE: CREATION OF NEW DECK OF CARDS WITH INDIVIDUAL CARD CREATION
             //Deck deck = new Deck(); //creates an object called deck
             //deck.Cards = new List<Card>(); //indicates that the object will be a list full of cards
 
@@ -21,16 +21,12 @@ namespace TwentyOne
 
             //deck.Cards.Add(cardOne); //adds the first card to the deck
 
-            //original creation of new cards, individually
-            //Card cardOne = new Card();
-            //cardOne.Face = "Queen";
-            //cardOne.Suit = "Spades";
-
+            
             //Console.WriteLine(cardOne.Face + " of " + cardOne.Suit);
             //Console.WriteLine(deck.Cards[0].Face + " of " + deck.Cards[0].Suit);
 
-            //uses constructor that creates the deck first
-
+            
+            //CREATES NEW GAME OF TWENTY-ONE FROM A BROADER, MORE GENERIC CLASS OF GAMES
             Game game = new TwentyOneGame(); //can also start with Game game = new TwentyOneGame()--this is an example of polymorphism (can create a new object in an inherited class)
             game.Players = new List<Player>();
             Player player = new Player();
@@ -42,6 +38,7 @@ namespace TwentyOne
             //game.Play(); //called from TwentyOneGame and only accessible from that class
             Console.ReadLine();
 
+            //METHOD 3: CREATES NEW DECK WHICH IS THEN SHUFFLED INTO RANDOM ORDER A NUMBER OF TIMES
             //Deck deck = new Deck();
             //int timesShuffled = 0; //creates variable that is the receiver of the "out" from the method below
             //deck = Shuffle(deck: deck, timesShuffled: out timesShuffled, times:3); //calls the method below that randomizes the order of the deck--can add a ",x" that changes the default parameter

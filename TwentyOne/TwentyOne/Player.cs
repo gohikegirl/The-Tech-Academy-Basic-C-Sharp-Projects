@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TwentyOne
 {
-    public class Player
+    public class Player //<T> creates a generic class of Player that becomes more specific when specific data is passed into T when called in main program
     {
-        public List<Card> Hand { get; set; }
+        public List<Card> Hand { get; set; } //would replace <Card> with <T> if making more generic
         public int Balance { get; set; }
         public string Name { get; set; }
         public bool isActivelyPlaying { get; set; }
