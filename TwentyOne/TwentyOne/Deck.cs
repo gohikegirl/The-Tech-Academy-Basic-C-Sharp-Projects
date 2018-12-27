@@ -17,6 +17,7 @@ namespace TwentyOne
             //cardOne.Suit = "Hearts";
             //Cards.Add(cardOne);
 
+            //new approach to creating a deck--creates a new list of cards all in a nested loop
             Cards = new List<Card>();
             List<string> Suits = new List<string>() { "Clubs", "Hearts", "Diamonds", "Spades" };
             List<string> Faces = new List<string>()
@@ -34,7 +35,14 @@ namespace TwentyOne
                     Cards.Add(card);
                 }
             }
-        }
+        }   
         public List<Card> Cards { get; set; }
+
+                }
     }
+    
+    
+
+    
 }
+

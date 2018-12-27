@@ -10,7 +10,6 @@ namespace TwentyOne
     {
         static void Main(string[] args)
         {
-
             //METHOD ONE: CREATION OF NEW DECK OF CARDS WITH INDIVIDUAL CARD CREATION
             //Deck deck = new Deck(); //creates an object called deck
             //deck.Cards = new List<Card>(); //indicates that the object will be a list full of cards
@@ -39,25 +38,25 @@ namespace TwentyOne
             Console.ReadLine();
 
             //METHOD 3: CREATES NEW DECK WHICH IS THEN SHUFFLED INTO RANDOM ORDER A NUMBER OF TIMES
-            //Deck deck = new Deck();
-            //int timesShuffled = 0; //creates variable that is the receiver of the "out" from the method below
-            //deck = Shuffle(deck: deck, timesShuffled: out timesShuffled, times:3); //calls the method below that randomizes the order of the deck--can add a ",x" that changes the default parameter
-            ////deck = Shuffle(deck, 3); //calls the method that allows randomization of the deck multiple times
-            //foreach (Card card in deck.Cards)
-            // {
-            //    Console.WriteLine(card.Face + " of " + card.Suit);
-            // }
-            //Console.WriteLine(deck.Cards.Count);
-            //Console.Write("Times shuffled {0}", timesShuffled); //brackets designate that we want to insert the value of the following variable
-            //Console.ReadLine();
-            
+            Deck deck = new Deck();
+            int timesShuffled = 0; //creates variable that is the receiver of the "out" from the method below
+            deck = Shuffle(deck: deck, timesShuffled: out timesShuffled, times: 3); //calls the method below that randomizes the order of the deck--can add a ",x" that changes the default parameter
+            deck = Shuffle(deck, 3); //calls the method that allows randomization of the deck multiple times
+            foreach (Card card in deck.Cards)
+            {
+                Console.WriteLine(card.Face + " of " + card.Suit);
+            }
+            Console.WriteLine(deck.Cards.Count);
+            Console.Write("Times shuffled {0}", timesShuffled); //brackets designate that we want to insert the value of the following variable
+            Console.ReadLine();
         }
 
+        //METHOD: SHUFFLE
         public static Deck Shuffle(Deck deck, out int timesShuffled, int times = 1) //creates public method without an object returning a class Deck and creates OPTIONAL parameter by giving a default value
-            //also has an optional paramater (default value, always at the end of the parameters) and an out parameter that passes a value to a variable named in the program
+                                                                                    //also has an optional paramater (default value, always at the end of the parameters) and an out parameter that passes a value to a variable named in the program
         {
             timesShuffled = 0; //sets the variable  that is an output of this method at a value of 0
-            for (int i=0; i<times; i++)
+            for (int i = 0; i < times; i++)
             {
                 timesShuffled++;
                 List<Card> TempList = new List<Card>(); //create a new list that can be filled with cards
@@ -71,7 +70,7 @@ namespace TwentyOne
                 deck.Cards = TempList; //changes the values of the original deck of cards to the new deck (based on the temp deck created)
             }
 
-                return deck; //sets the new deck with the now randomized card order<--this is called into the program lines above that print out the deck
+            return deck; //sets the new deck with the now randomized card order<--this is called into the program lines above that print out the deck
 
         }
         //public static Deck Shuffle(Deck deck, int times) //creates second public method that allows user to shuffle multiple times
