@@ -19,15 +19,15 @@ namespace TwentyOne
 
             //new approach to creating a deck--creates a new list of cards all in a nested loop
             Cards = new List<Card>();
-            List<string> Suits = new List<string>() { "Clubs", "Hearts", "Diamonds", "Spades" };
-            List<string> Faces = new List<string>()
+            List<Suit> Suits = new List<Suit>() { Suit.Clubs, Suit.Hearts, Suit.Diamonds, Suit.Spades };
+            List<Face> Faces = new List<Face>()
             {
-                "Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten", "Jack","Queen", "King", "Ace"
+                Face.Two,Face.Three,Face.Four,Face.Five,Face.Six,Face.Seven,Face.Eight,Face.Nine,Face.Ten, Face.Jack,Face.Queen, Face.King, Face.Ace
             };
 
-            foreach (string face in Faces)
+            foreach (Face face in Faces)
             {
-                foreach (string suit in Suits)
+                foreach (Suit suit in Suits)
                 {
                     Card card = new Card();
                     card.Suit = suit;
@@ -35,14 +35,34 @@ namespace TwentyOne
                     Cards.Add(card);
                 }
             }
-        }   
+        }
         public List<Card> Cards { get; set; }
 
+        public Deck Shuffle(Deck deck, out int timesShuffled, int times = 1) //creates public method without an object returning a class Deck and creates OPTIONAL parameter by giving a default value
+                                                                             //also has an optional paramater (default value, always at the end of the parameters) and an out parameter that passes a value to a variable named in the program
+        {
+            timesShuffled = 0; //sets the variable  that is an output of this method at a value of 0
+            for (int i = 0; i < times; i++)
+            {
+                timesShuffled++;
+                List<Card> TempList = new List<Card>(); //create a new list that can be filled with cards
+                Random random = new Random(); //calls a randomizing method
+                while (Cards.Count > 0) //creates loop, removing cards from one list into another in until there are no more to move
+                {
+                    int randomIndex = random.Next(0, Cards.Count); //creates a bunch of indexes at random between 0 and 52
+                    TempList.Add(Cards[randomIndex]); //creates new cards based on the cards from the original deck at random places determined by the index
+                    Cards.RemoveAt(randomIndex); //removes corresponding cards from the original deck
                 }
+                Cards = TempList; //changes the values of the original deck of cards to the new deck (based on the temp deck created)
+            }
+            return deck;
+
+        }
     }
+}
     
     
 
     
-}
+
 

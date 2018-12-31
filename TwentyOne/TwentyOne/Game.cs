@@ -9,9 +9,12 @@ namespace TwentyOne
     public abstract class Game //creates an "abstract" class--is never created as an object in the main program, 
         //as it is only used to pass on a general set of characteristics to inherting classes
     {
-        public List<Player> Players { get; set; } //sets up a characteristic of the class "Game"
+        private List<Player> _players = new List<Player>();
+        private Dictionary<Player, int> _bets = new Dictionary<Player, int>();
+        public List<Player> Players { get { return _players; } set { _players = value; } } //sets up a characteristic of the class "Game"
         public string Name { get; set; }
-        public string Dealer { get; set; }
+        public Dictionary<Player, int> Bets { get { return _bets; } set { _bets = value; } }
+        
 
         public abstract void Play(); //abstract method: sets up a method that must be implemented by all inheriting subclasses 
         //Must be part of an abstract class
@@ -23,6 +26,8 @@ namespace TwentyOne
             {
                 Console.WriteLine(player.Name);
             }
+
         }
+        
     }
 }
