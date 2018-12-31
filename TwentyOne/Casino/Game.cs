@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace Casino
 {
     public abstract class Game //creates an "abstract" class--is never created as an object in the main program, 
         //as it is only used to pass on a general set of characteristics to inherting classes

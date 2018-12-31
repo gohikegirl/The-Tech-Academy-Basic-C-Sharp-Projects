@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Casino.Interfaces;
 
-namespace TwentyOne
+
+namespace Casino.TwentyOne
 {
-    class TwentyOneGame : Game, IWalkAway //set up so that now the TwentyOneGame class inherits the properties and methods from Game and the interface
+    public class TwentyOneGame : Game, IWalkAway //set up so that now the TwentyOneGame class inherits the properties and methods from Game and the interface
         //IWalkAway
     {
         public TwentyOneDealer Dealer { get; set; }

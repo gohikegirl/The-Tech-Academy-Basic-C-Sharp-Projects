@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne
+namespace Casino
 {
     public class Player //<T> creates a generic class of Player that becomes more specific when specific data is passed into T when called in main program
     {

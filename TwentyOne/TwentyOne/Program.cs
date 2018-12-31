@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Casino;
+using Casino.TwentyOne;
 
 namespace TwentyOne
 {
     class Program
     {
-        
+
         static void Main(string[] args)
         {
-            
+
             //BRINGING IT ALL TOGETHER
             Console.WriteLine("Welcome to the Grand Hotel and Casino. Start by telling me your name.");
             string playerName = Console.ReadLine();
@@ -22,13 +24,13 @@ namespace TwentyOne
 
             Console.WriteLine("Hello, {0}. Would you like to join a game of Twenty One?", playerName);
             string answer = Console.ReadLine().ToLower();
-            if(answer=="yes"|| answer == "yeah" ||answer == "y"|| answer =="ya")
+            if (answer == "yes" || answer == "yeah" || answer == "y" || answer == "ya")
             {
-                Player player = new Player (playerName, beginningBalance);
+                Player player = new Player(playerName, beginningBalance);
                 Game game = new TwentyOneGame();
                 game += player;
                 player.isActivelyPlaying = true;
-                while(player.isActivelyPlaying && player.Balance >0)
+                while (player.isActivelyPlaying && player.Balance > 0)
                 {
                     game.Play();
                 }
@@ -62,7 +64,7 @@ namespace TwentyOne
             //player.Name = "Jesse";
             //game = game + player;//can replace with "game += player"
             ////helpful for adding subclasses into a broader superclass
-           
+
             ////game.ListPlayers();
             ////game.Play(); //called from TwentyOneGame and only accessible from that class
             //Console.ReadLine();
@@ -102,7 +104,7 @@ namespace TwentyOne
 
         //    return deck; //sets the new deck with the now randomized card order<--this is called into the program lines above that print out the deck
 
-        }
+        //}
         //public static Deck Shuffle(Deck deck, int times) //creates second public method that allows user to shuffle multiple times
         //{
         //    for (int i = 0; i < times; i++)
@@ -112,4 +114,6 @@ namespace TwentyOne
         //    return deck;
         //}
     }
+}
+
 

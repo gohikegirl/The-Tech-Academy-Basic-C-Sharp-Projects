@@ -8,6 +8,25 @@ namespace TwentyOne
 {
     class Notes
     {
+        //LIBRARY
+        //Can create one by clicking on Solution file and adding a new Solution--> Class Library
+        //Creates a new file that looks like a Program file execept for a few differences
+        //If creating a library out of another program, drag all files except the Program.cs to the library
+        //Rename the namespaces of all .cs files to the new library name. If there is a class that is specific to a particular class of programs that will use the library, create a 
+        //library.subnamespace entry for that class. Remember to add the using.namespace.subnamespace to the header if inheriting
+        //Then go to original program and add a new Reference--look for library file (.dll) in the repository, namespace, bin, and debug folder
+        
+        //ASSEMBLIES
+        //All code is either a library--compiled as a .dll--or an executed file--compiled as an .exe. The .exe is an assembly.
+        //An assembly is pretty much what you get when you compile your C# code into an intermediate language (.exe)
+        
+
+        //NAMESPACES
+        //A grouping mechanism that allows you to divide your code so that you can create subclasses and other ways of organizing your code
+            //For instance, if you were to add ".BaseClasses" to the namespace "TwentyOne", you would need to add "using.TwentyOne.BaseClasses" to anything associated with the TwentyOne namespace
+        //Namespaces (invoked with "using") make it unneccessary to always type in the namespaces explicitly everytime you wanted to use a method or object associated with it
+        //If you create a name space that happens to be the same name as another namespace, you will need to define which higher namespace you mean to associate with 
+        
         //DATETIME
         //Is a struct--cannot be nullable, must have a value (i.e., not reference)
         //Inputs are year, month, day, hour, minute, seconds
