@@ -24,10 +24,10 @@ namespace Casino
             {
                 file.WriteLine(DateTime.Now);
                 file.WriteLine(card);
+                
             }
             Console.WriteLine(Deck.Cards.First().ToString() + "\n"); //prints the name of the card just added
-            
-Deck.Cards.RemoveAt(0); //removes the card officially from the larger deck
+            Deck.Cards.RemoveAt(0); //removes the card officially from the larger deck
 
         }
     }
