@@ -8,6 +8,13 @@ namespace TwentyOne
 {
     class Notes
     {
+        //DATETIME
+        //Is a struct--cannot be nullable, must have a value (i.e., not reference)
+        //Inputs are year, month, day, hour, minute, seconds
+        //Can be used to create TimeSpans or other amounts of dates/times
+
+
+        
         //I/O FILES
         //To create a text file with some text in it, create a string variable with text
         //Then use File.WriteAllText("@[insert file path], text");
