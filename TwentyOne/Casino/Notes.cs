@@ -8,25 +8,52 @@ namespace Casino
 {
     class Notes
     {
-     //GUID (global unique identifier)
-     // Can create this by using the following code:
-        //Guid identifier = Guid.NewGuid();
-        
-        //CONSTANT
-     //Creates a data type that remains constant--e.g. const string casinoName = "Grand Hotel and Casino"
-     //Good for setting a value of a variable that you do not want to change and want to restrict
-        
-     //CONSTRUCTOR CALL CHAIN
+        //EXCEPTION HANDLING
+        //Entry or something that happens in a program that breaks up the ability of a program to progress forward
+        //Can try to prevent these by using the try/catch combo
+        //Can simmulate what happens to a user when a person does not have a debugging mode or app like Visual Studio
+        //Better prevented from the start--for example:
+        //exception handling loop for invalid entries
+            // bool validAnswer = false;
+            //int beginningBalance = 0;
+           // while (!validAnswer)
+            // {
+                //   Console.WriteLine("And how much money did you bring today?");
+               //   validAnswer = int.TryParse(Console.ReadLine(), out beginningBalance);
+           //}
+        //exception handling for specific conditions being met
+            //if (condition)
+            //{ throw new Exception();}
+        //Also can wrap in a try (insert usual formula) and then catch with message and "return" to end
+                //try
+                    //{
+                        //game.Play();
+                    //}
+                //catch (Exception)
+                    //{
+                        //Console.WriteLine("An error occurred. Please contact your System Administrator.");
+                        //return;
+                    //}
+
+    //GUID (global unique identifier)
+    // Can create this by using the following code:
+    //Guid identifier = Guid.NewGuid();
+
+    //CONSTANT
+    //Creates a data type that remains constant--e.g. const string casinoName = "Grand Hotel and Casino"
+    //Good for setting a value of a variable that you do not want to change and want to restrict
+
+    //CONSTRUCTOR CALL CHAIN
     //Allows you to reuse constructors that have already been created (see Player class for example)--by having the constructor inherit at least some of the characteristics of the other constructor
     //Example: public Player (string name): this(name, 100)
-        //{
-        //} <---does not require an implementation
-        //public Player(string name, int beginningBalance)<--the constructor that the Call Chain is drawing off of
+    //{
+    //} <---does not require an implementation
+    //public Player(string name, int beginningBalance)<--the constructor that the Call Chain is drawing off of
     //Player newPlayer = new Player ("Jesse")
     //Another version of this is to use "var"
-        //Can be used in place of creating the constructor call chain to shorten the typing related with typing out data types
-            //var Player newPlayer = new Player ("Jesse")
-        //However, it should be very clear what data type is being referred
+    //Can be used in place of creating the constructor call chain to shorten the typing related with typing out data types
+    //var Player newPlayer = new Player ("Jesse")
+    //However, it should be very clear what data type is being referred
 
     //LIBRARY
     //Can create one by clicking on Solution file and adding a new Solution--> Class Library
@@ -112,6 +139,7 @@ namespace Casino
     //CONSTRUCTOR
     //Creates a new object within a class that can be called up within a program
     //Can be public or private
+    //Must have the same name as the class in which it is being created
     //Takes inputs (e.g., public Player (string name, int beginninng balance))
     //In brackets below the initial line, create the properties of the class by setting their
     //value to the inputs of the constructor

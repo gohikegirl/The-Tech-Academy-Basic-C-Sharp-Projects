@@ -21,8 +21,16 @@ namespace TwentyOne
             Console.WriteLine("Welcome to the {0}. Start by telling me your name.", casinoName);
             string playerName = Console.ReadLine();
 
-            Console.WriteLine("And how much money did you bring with you today?");
-            int beginningBalance = Convert.ToInt32(Console.ReadLine());
+            //exception handling loop
+            bool validAnswer = false;
+            int beginningBalance = 0;
+            while (!validAnswer)
+            {
+                Console.WriteLine("And how much money did you bring today?");
+                validAnswer = int.TryParse(Console.ReadLine(), out beginningBalance); //takes the user input and tries to see if it can convert to an integer and gives a true or false
+                if (!validAnswer) Console.WriteLine("Pleae enter digits only, no decimals.");
+            }
+                     
 
             Console.WriteLine("Hello, {0}. Would you like to join a game of Twenty One?", playerName);
             string answer = Console.ReadLine().ToLower();
@@ -39,7 +47,24 @@ namespace TwentyOne
                 player.isActivelyPlaying = true;
                 while (player.isActivelyPlaying && player.Balance > 0)
                 {
-                    game.Play();
+                    try
+                    {
+                        game.Play();
+                    }
+                    catch (Fraud_Exception)
+                    {
+                        Console.WriteLine("Security! Kick this person out!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    
+                    catch (Exception)
+                    {
+                        Console.WriteLine("An error occurred. Please contact your System Administrator.");
+                        Console.ReadLine();
+                        return;
+                            
+                    }
                 }
                 game -= player;
                 Console.WriteLine("Thank you for playing!");
