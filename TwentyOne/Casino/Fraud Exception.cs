@@ -12,7 +12,8 @@ namespace Casino
             : base() { }
 
         public Fraud_Exception(string message) //overloading
-            : base() { }
+            : base()
+        { }
 
-    }
+       }
 }
